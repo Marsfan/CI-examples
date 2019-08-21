@@ -9,6 +9,6 @@ instal:
 script:
     pytest test_main.py --cov=main.py --cov=test_main.py
 
-after_success:
+after_script:
     coveralls
     codecov
