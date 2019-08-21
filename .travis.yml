@@ -1,0 +1,14 @@
+language: python
+python:
+- 3.6
+- 3.7
+
+instal:
+    pip install -r requirements.txt
+
+script:
+    pytest -cov=main.py --cov=test_main.py
+
+after_success:
+    coveralls
+    codecov
