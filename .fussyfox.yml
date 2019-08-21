@@ -1,0 +1,5 @@
+- bandit
+- flake8
+- isor
+- pylint
+- mypy
