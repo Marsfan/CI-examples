@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    python -m pip install -r requirements.txt
+    pytest test_main.py --doctest-modules --junitxml=junit/test-results.xml --cov=main --cov-report=xml --cov-report=html
+      displayName: 'PyTest'
+
+- script: |
+    python -m pip install -r requirements.txt
+    pylint main.py
+      displayName: 'PyLint'
