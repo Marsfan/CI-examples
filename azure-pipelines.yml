@@ -15,10 +15,10 @@ steps:
 
 - script: |
     python -m pip install -r requirements.txt
-    pytest test_main.py --doctest-modules --junitxml=junit/test-results.xml --cov=main --cov-report=xml --cov-report=html
+    python -m pytest test_main.py --doctest-modules --junitxml=junit/test-results.xml --cov=main --cov-report=xml --cov-report=html
       displayName: 'PyTest'
 
 - script: |
     python -m pip install -r requirements.txt
-    pylint main.py
+    python -m pylint main.py
       displayName: 'PyLint'
