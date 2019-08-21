@@ -7,8 +7,8 @@ instal:
     pip install -r requirements.txt
 
 script:
-    pytest test_main.py --cov=main.py --cov=test_main.py
+    pytest test_main.py --cov=main --cov=test_main
 
 after_script:
     - coveralls
-    - codecov
+    - cocodecov
