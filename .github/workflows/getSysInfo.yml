@@ -1,0 +1,20 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get Kernel Version
+      run: uname -r
+    - name: Get CPU info
+      run: sudo lscpu
+    - name: Get RAM info
+      run: free -h
+    - name: Get HDD info
+      run: df -h --total
+    - name: Get GPU info
+      run: sudo lspci 
